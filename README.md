@@ -24,7 +24,6 @@ This is a weather app built with Django that allows you to get the current weath
 2. Enter the name or zip code of the location you want to check the weather for.
 3. Press the "Search" button.
 4. The current weather conditions for that location will be displayed.
-5. To see a 5-day forecast, click on the location name in the search results.
 
 ## API Usage
 
