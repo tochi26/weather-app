@@ -1,14 +1,20 @@
 from django.shortcuts import render
 import urllib.request
 import json
+from dotenv import load_dotenv
 
+load_dotenv()
+import os
+
+
+
+
+API_KEY = os.getenv('API_KEY')
 # Create your views here.
 def index(request):
     if request.method == 'POST':
         city = request.POST['city']
-        source = urllib.request.urlopen('http://api.openweathermap.org/data/2.5/weather?q=' + city + 
-        '&units=metric&appid=d6fe9d8d5f5ebe078e1721622b51d78b').read()
-
+        source = urllib.request.urlopen(f'http://api.openweathermap.org/data/2.5/weather?q={city}&units=metric&appid={API_KEY}').read()
         list_of_data = json.loads(source)
         
         data = {
