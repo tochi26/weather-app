@@ -1,1 +1,34 @@
 .env
+# Python compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+env/
+
+# Secret keys
+*.key
+*.pem
+
+# Log files
+*.log
+
+# Media files
+media/
+
+# Static files
+staticfiles/
+static/
+
+# Database
+db.sqlite3
+*.sqlite3
+
+# Site-specific configurations
+settings_local.py
+
+# Ignore migrations
+*/migrations/*
