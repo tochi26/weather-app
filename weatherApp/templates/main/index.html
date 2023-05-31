@@ -14,7 +14,7 @@
 <body>
   <div class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
     <div class="container">
-      <a href="../" class="navbar-brand">Weather App <span style="color: rgb(39, 69, 161);"> <strong> - Django
+      <a href="../" class="navbar-brand">Weather App <span style="color: rgb(25, 153, 78);"> <strong> - Django
             Framework</strong>
         </span> </a>
       <a href="https://openweathermap.org" class="navbar-tech">OpenWeather - Get Your API</a>
@@ -26,7 +26,7 @@
     <h1 class="display-5">WeatherApp </h1>
     <h5>Using Python Language and Django Framework</h5>
 
-    <img src="{% static 'images/weather.png' %}" class="image" style="width:100px; margin-bottom:-50px; ">
+   <!-- <img src="../static/images/weather.png" class="image" style="width:100px; margin-bottom:-50px; "> -->
   </div>
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -34,7 +34,7 @@
       {% csrf_token %}
       <div class=" input-group">
 
-      <input type="text" class="form-control" name="city" placeholder="Choose Your City ...">
+      <input type="text" class="form-control" name="city" placeholder="choose your state or country..">
       <div class="input-group-btn">
         <button type="submit" class="btn btn-primary">Search</button>
       </div>
