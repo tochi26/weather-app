@@ -8,7 +8,6 @@ This is a weather app built with Django that allows you to get the current weath
 - [Installation](#installation)
 - [Usage](#usage)
 - [API Usage](#api-usage)
-- [Contributing](#contributing)
 - [License](#license)
 
 ## Installation
