@@ -35,6 +35,15 @@ def index(request):
                 data = {}
                 error_message = f"No information found for '{city}'. Please enter a valid city or country."
 
+        except urllib.error.HTTPError as e:
+            if e.code == 404:
+                print(f"City not found: {city}")
+                data = {}
+                error_message = f"No weather information found for '{city}'. Please enter a valid city or country."
+            else:
+                print(f"HTTP Error: {e}")
+                data = {}
+                error_message = "Sorry, an error occurred while retrieving weather information."
         except Exception as e:
             print(f"Error occurred: {str(e)}")
             data = {}
