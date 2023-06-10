@@ -2,7 +2,6 @@ from django.shortcuts import render
 import urllib.parse
 import urllib.request
 import json
-from django.contrib import messages
 from dotenv import load_dotenv
 import os
 
@@ -19,25 +18,30 @@ def index(request):
         try:
             source = urllib.request.urlopen(url).read()
             list_of_data = json.loads(source)
-            
-            data = {
-                "country_code" : str(list_of_data['sys']['country']),
-                "coordinate": str(list_of_data['coord']['lon']) + ', ' + str(list_of_data['coord']['lat']),
-                "temp": str(list_of_data['main']['temp']) + ' °C',
-                "pressure": str(list_of_data['main']['pressure']),
-                "humidity": str(list_of_data['main']['humidity']),
-                "main": str(list_of_data['weather'][0]['main']),
-                "description":  str(list_of_data['weather'][0]['description']),
-                "icon": list_of_data['weather'][0]['icon'],
-            }
 
-            print(data)
-        except urllib.error.HTTPError as e:
-            error_message = e.read().decode('utf-8')
-            print(f"HTTP Error occurred: {error_message}")
-            messages.error(request, f"Error occurred: {error_message}")
+            if list_of_data['cod'] == 200:
+                data = {
+                    "country_code": str(list_of_data['sys']['country']),
+                    "coordinate": str(list_of_data['coord']['lon']) + ', ' + str(list_of_data['coord']['lat']),
+                    "temp": str(list_of_data['main']['temp']) + ' °C',
+                    "pressure": str(list_of_data['main']['pressure']),
+                    "humidity": str(list_of_data['main']['humidity']),
+                    "main": str(list_of_data['weather'][0]['main']),
+                    "description": str(list_of_data['weather'][0]['description']),
+                    "icon": list_of_data['weather'][0]['icon'],
+                }
+                error_message = None
+            else:
+                data = {}
+                error_message = f"No information found for '{city}'. Please enter a valid city or country."
+
+        except Exception as e:
+            print(f"Error occurred: {str(e)}")
             data = {}
+            error_message = "Sorry, an error occurred while retrieving weather information."
+
     else:
         data = {}
-       
-    return render(request, "main/index.html", {"data": data})
+        error_message = None
+
+    return render(request, "main/index.html", {"data": data, "error_message": error_message})
