@@ -2,10 +2,11 @@ from django.shortcuts import render
 import urllib.parse
 import urllib.request
 import json
+from django.contrib import messages
 from dotenv import load_dotenv
+import os
 
 load_dotenv()
-import os
 
 API_KEY = os.getenv('API_KEY')
 
@@ -31,10 +32,12 @@ def index(request):
             }
 
             print(data)
-        except Exception as e:
-            print(f"Error occurred: {str(e)}")
-            data = {}  # Set an empty data dictionary in case of an error
+        except urllib.error.HTTPError as e:
+            error_message = e.read().decode('utf-8')
+            print(f"HTTP Error occurred: {error_message}")
+            messages.error(request, f"Error occurred: {error_message}")
+            data = {}
     else:
         data = {}
-
-    return render(request, "main/index.html", data)
+       
+    return render(request, "main/index.html", {"data": data})

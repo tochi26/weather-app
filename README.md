@@ -41,5 +41,5 @@ This app was created by Tochukwu Nzewi, with data provided by [OpenWeatherMap](h
 
 ## Screenshots
 
-![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/vvs8yybrfmuokc69latn.png)
+![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3balf7d32w9asohe7sbm.png)
 
