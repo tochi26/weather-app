@@ -1,6 +1,6 @@
 # Weather App
 
-This is a weather app built with Django that allows you to get the current weather conditions for any location in the world. With this app, you can easily check the temperature, humidity, wind speed, and more for any city or town.
+This is a weather app built with Python, Django, Bootsrap and  Openweather API that allows you to get the current weather conditions for any location in the world. With this app, you can easily check the temperature, humidity, wind speed, and more for any city or town.
 
 
 ## Table of Contents
