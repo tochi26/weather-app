@@ -39,7 +39,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 This app was created by Tochukwu Nzewi, with data provided by [OpenWeatherMap](https://openweathermap.org/). 
 
 ## DEMO 
-[![Demo](https://img.shields.io/badge/Demo-Play%20Demo-brightgreen.svg)
+[![View Demo](https://img.shields.io/badge/Demo-Play%20Demo-brightgreen.svg)](https://drive.google.com/file/d/1tpN6qleQxiHvWd9h8KPVhUwiQ0xOY69H/view?usp=sharing)
 
 ## Screenshots
 
